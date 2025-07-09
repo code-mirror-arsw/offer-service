@@ -8,7 +8,7 @@ spring:
     name: OFFER-SERVICE
     restclient:
       user:
-        url: http://localhost:8081/services/be/user-service/
+        url: http://localhost:8280/services/be/user-service/
   datasource:
     url: jdbc:mysql://localhost:3306/auth_db
     username: auth_user

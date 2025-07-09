@@ -9,7 +9,7 @@ import retrofit2.http.*;
 public interface UserApiService {
 
     @GET("users/{id}")
-    Call<UserDto> findById(@Path("id") String id);
+    Call<UserDto> findById(@Header("Authorization") String authHeader,@Path("id") String id);
 
 
 

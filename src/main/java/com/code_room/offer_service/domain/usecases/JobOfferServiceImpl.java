@@ -103,7 +103,7 @@ public class JobOfferServiceImpl implements JobOfferService {
     }
 
     @Override
-    public OfferJobDto addParticipant(String offerId, String intervieweeId) throws IOException {
+    public OfferJobDto addParticipant(String offerId, String intervieweeId,String authHeader) throws IOException {
         JobOfferEntity offer = repository.findById(offerId)
                 .orElseThrow(() -> new NoSuchElementException("Job offer not found"));
 
@@ -115,7 +115,7 @@ public class JobOfferServiceImpl implements JobOfferService {
             throw new IllegalArgumentException("Participant already added");
         }
 
-        Response<UserDto> response = userApiService.findById(intervieweeId)
+        Response<UserDto> response = userApiService.findById(authHeader,intervieweeId)
                         .execute();
 
         if (!response.isSuccessful() || response.body() == null) {

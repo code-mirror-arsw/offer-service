@@ -94,10 +94,11 @@ public class JobOfferController {
     @PostMapping("/{offerId}/participants")
     public ResponseEntity<?> addParticipant(
             @PathVariable("offerId") String offerId,
-            @RequestParam String intervieweeId) {
+            @RequestParam String intervieweeId,
+            @RequestHeader("Authorization") String authHeader) {
 
         try {
-            OfferJobDto updated = jobOfferService.addParticipant(offerId, intervieweeId);
+            OfferJobDto updated = jobOfferService.addParticipant(offerId, intervieweeId,authHeader);
             return ResponseEntity.ok(updated);
         } catch (NoSuchElementException | IllegalStateException | IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(Map.of("message", e.getMessage()));

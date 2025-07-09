@@ -24,5 +24,5 @@ public interface JobOfferService {
 
     void deleteJobOffer(String id);
 
-    OfferJobDto addParticipant(String offerId, String intervieweeId) throws IOException;
+    OfferJobDto addParticipant(String offerId, String intervieweeId,String authHeader) throws IOException;
 }
