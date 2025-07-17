@@ -153,5 +153,12 @@ public class JobOfferServiceImpl implements JobOfferService {
         }
     }
 
+    @Override
+    public String getLanguage(String offerId){
+        return repository.findById(offerId).
+                orElseThrow(() -> new RuntimeException("no found " + offerId))
+                .getLanguage();
+    }
+
 
 }

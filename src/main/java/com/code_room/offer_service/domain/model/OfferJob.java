@@ -21,6 +21,9 @@ public class OfferJob {
 
     private int maxCandidates;
 
+    private String language;
+
+
     private String adminEmail;
 
 }

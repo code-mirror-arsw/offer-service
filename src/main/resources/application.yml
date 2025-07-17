@@ -1,7 +1,9 @@
 server:
-  port: 8080
+  port: 8082
   servlet:
     context-path: /services/be/offer-service
+
+  address: 0.0.0.0
 
 spring:
   application:

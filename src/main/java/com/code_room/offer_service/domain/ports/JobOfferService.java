@@ -9,7 +9,6 @@ import java.util.List;
 public interface JobOfferService {
     OfferJobDto createJobOffer(OfferJobDto dto);
 
-
     Page<OfferJobDto> getAllJobOffers(int page);
 
     Page<OfferJobDto> newOffers(int page);
@@ -25,4 +24,6 @@ public interface JobOfferService {
     void deleteJobOffer(String id);
 
     OfferJobDto addParticipant(String offerId, String intervieweeId,String authHeader) throws IOException;
+
+    String getLanguage(String offerId);
 }

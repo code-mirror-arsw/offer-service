@@ -19,6 +19,7 @@ public class JobOfferController {
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody OfferJobDto dto) {
+        System.out.println(dto.toString());
         try {
             OfferJobDto created = jobOfferService.createJobOffer(dto);
             return ResponseEntity.ok(created);
@@ -102,6 +103,16 @@ public class JobOfferController {
             return ResponseEntity.ok(updated);
         } catch (NoSuchElementException | IllegalStateException | IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(Map.of("message", e.getMessage()));
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body(Map.of("message", "Unexpected error" + e.getMessage()));
+        }
+    }
+
+    @GetMapping("/language")
+    public ResponseEntity<?> getByLanguage(@RequestParam String offerId){
+        try {
+            String language = jobOfferService.getLanguage(offerId);
+            return ResponseEntity.ok().body(Map.of("language" , language));
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body(Map.of("message", "Unexpected error" + e.getMessage()));
         }

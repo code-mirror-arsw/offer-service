@@ -44,6 +44,9 @@ public class JobOfferEntity {
     @Column(name = "admin_email")
     private String adminEmail;
 
+    private String language;
+
+
     @ElementCollection
     @CollectionTable(name = "job_offer_participants", joinColumns = @JoinColumn(name = "job_offer_id"))
     @Column(name = "participant_id")
