@@ -60,3 +60,7 @@ El diseño y despliegue de este microservicio se rigen por estrictos criterios d
 ## diagrama de clases
 
 ![image](https://github.com/user-attachments/assets/1004374b-19d5-4b27-957d-a4162ed0abfb)
+
+## este tiene cobertura por sonarquebe 
+
+![img.png](img.png)
