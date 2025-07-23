@@ -10,7 +10,7 @@ spring:
     name: OFFER-SERVICE
     restclient:
       user:
-        url: http://localhost:8280/services/be/user-service/
+        url: https://apigateway-b8exa0bnakh6bvhx.canadacentral-01.azurewebsites.net/services/be/user-service/
   datasource:
     url: jdbc:mysql://localhost:3306/auth_db
     username: auth_user
